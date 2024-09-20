@@ -19,8 +19,7 @@ function setCORSHeaders(res) {
 // Function to handle authorization requests
 function handleAuthRequest(req, res) {
   let body = '';  
-  console.log('received req, res:', req, res);
-  
+ 
   // Accumulate the request body data
   req.on('data', chunk => {
     body += chunk.toString();
