@@ -18,8 +18,9 @@ function setCORSHeaders(res) {
 
 // Function to handle authorization requests
 function handleAuthRequest(req, res) {
-  let body = '';
-
+  let body = '';  
+  console.log('received req, res:', req, res);
+  
   // Accumulate the request body data
   req.on('data', chunk => {
     body += chunk.toString();
@@ -29,9 +30,12 @@ function handleAuthRequest(req, res) {
   req.on('end', () => {
     // Parse the body as JSON
     const { clientDomain } = JSON.parse(body);
+    console.log('clientDomain', clientDomain);
 
     // Check if clientDomain exists in approvedClients list
     const isApproved = Object.values(approvedClients).includes(clientDomain);
+    console.log('approvedClients', approvedClients);
+    console.log('isApproved', isApproved);
 
     // Prepare the response based on the authorization result
     const response = {
