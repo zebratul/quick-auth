@@ -7,6 +7,7 @@ const approvedClients = {
   iguks: 'edu.iguks.ru',
   otk: 'bitrix.otk.group',
   sovz: 'sovz.bitrix24.ru',
+  simplesales: 'simsales.bitrix24.ru',
 };
 
 // Function to handle CORS
